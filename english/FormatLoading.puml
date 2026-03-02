@@ -1,0 +1,45 @@
+@startuml activity
+
+skinparam defaultTextAlignment center
+skinparam defaultFontSize 10
+skinparam wrapWidth 300
+
+start
+
+group Processing a modification (Modification)\nor its feature (Feature) {
+
+    if (Is the modification or feature enabled by the user?) then (Yes)
+        if (Does the @patches key exist?) then (Yes)
+            :Read the file list from @patches;
+
+            while (Are there unprocessed files left in the list?) is (Yes)
+                :Read the file by its relative path;
+                :Load it as a TablePatches JSON object;
+                #dedefe :Apply patches from this TablePatches object;
+            endwhile (No)
+        else (No)
+            :Compose a TablePatches object from the keys of the current object that do not start with @;
+            #dedefe :Apply patches from this TablePatches object;
+        endif
+        if (Does the @root key exist?) then (Yes)
+            :Read the relative path from @root;
+            #defede :Provide the game with all files from the directory at the specified path;
+        else (No)
+            if (Type of the current object?) then (Modification)
+                #defede :Provide the game with all files from the root of the modification;
+            else (Feature)
+                :Check for a directory in the root of the modification whose name matches the feature ID;
+                if (Does the directory exist?) then (Yes)
+                    #defede :Provide the game with all files from this directory;
+                else (No)
+                endif
+            endif
+        endif
+    else (No)
+    endif
+
+}
+
+stop
+
+@enduml
