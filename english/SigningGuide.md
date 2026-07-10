@@ -25,7 +25,8 @@ Suitable for any mod with resources and for publishing to the library.
 - `icon.png` — square PNG, up to 640×640 (optional)
 
 **Process:**
-1. Generate a UUID (see UUID guide). New mod — new UUID, update — same UUID.
+1. Generate a UUID (see UUID guide). For a new mod — a new UUID;
+   when updating an existing mod, you must use its original UUID.
 2. Send the archive to the **#Signing Requests Pro** topic (find the link in the pinned messages of [t.me/nb_mods](https://t.me/nb_mods)).
 3. Include in your message: name, description, UUID, version (for updates),
    links to screenshots/videos from @nb_mods (if any).
@@ -33,7 +34,7 @@ Suitable for any mod with resources and for publishing to the library.
 
 **Requirements:**
 - Name and description must be error-free, preferably localized in RU and EN.
-- Using someone else's UUID without the author's permission is prohibited.
+- Your mod must have a unique UUID, i.e. you cannot use another mod's UUID.
 - For updates, the version must be higher than the previous one.
 
 **Publishing to the library:**

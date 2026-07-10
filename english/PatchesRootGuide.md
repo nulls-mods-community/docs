@@ -37,7 +37,7 @@ Specifies the folder inside the archive where the mod's resources are located.
 }
 ```
 
-The game will look for files relative to `my_res` instead of the archive root.
+The game will load resource files from `my_res` instead of the mod root.
 
 > Works stably starting from `@gv:64`. May not work in version 63.286.
 
@@ -56,5 +56,3 @@ The game will look for files relative to `my_res` instead of the archive root.
   }
 }
 ```
-
-Paths in `@patches` are always relative to the archive root, regardless of `@root`.
