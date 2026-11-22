@@ -1,0 +1,10 @@
+-- Bush Reveal
+local Players = {}
+
+function RevealPlayers()
+    for _, player in pairs(Players) do
+        player.Visible = true
+    end
+end
+
+print("Bush Reveal activated!")
